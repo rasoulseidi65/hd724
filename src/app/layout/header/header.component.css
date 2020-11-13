@@ -1,0 +1,13 @@
+/*start-header*/
+.container-fluid .row .col-md-12{
+  padding: 0px;
+}
+.container-fluid .row .col-md-12 #myslider .carousel-inner .item .carousel-caption h3{
+  font-family: IRANSans_Bold;
+  font-size: 24px;
+}
+.container-fluid .row .col-md-12 #myslider .carousel-inner .item .carousel-caption p{
+  font-family: mitra-font;
+  font-size: 20px;
+}
+/*end-header*/
