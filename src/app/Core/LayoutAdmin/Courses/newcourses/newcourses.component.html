@@ -2,7 +2,7 @@
 
 <form [formGroup]="courseForm" (ngSubmit)="onSubmit(courseForm.value)">
   <p-panel header="فرم ثبت مشخصات دوره آموزشی">
-    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+    <div class=" ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
       <div class="ui-grid-row">
         <div class="ui-grid-col-2">
           عنوان دوره آموزشی <label style="color: red">*</label>:
@@ -106,7 +106,8 @@
                         multiple="multiple"
                         accept="image/jpeg,image/png " maxFileSize="2000000"
                         (uploadHandler)="onUpload($event)" uploadLabel="آپلود عکس" chooseLabel="انتخاب عکس"
-                        cancelLabel="انصراف"></p-fileUpload>         </div>
+                        cancelLabel="انصراف"></p-fileUpload>
+        </div>
         <div class="ui-grid-col-2">
         </div>
       </div>

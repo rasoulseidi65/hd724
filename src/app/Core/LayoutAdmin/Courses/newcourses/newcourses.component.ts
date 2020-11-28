@@ -18,7 +18,9 @@ export class NewcoursesComponent implements OnInit {
   files1: TreeNode[];
   cols: any[];
 
-  constructor(private fb: FormBuilder, private messageService: MessageService, private courseService: CoursesService
+  constructor(private fb: FormBuilder,
+              private messageService: MessageService,
+              private courseService: CoursesService
     , private TeacherService: TeacherService) {
     this.categories = [
       {label: 'برنامه نویسی', value: 'برنامه نویسی'},
@@ -69,9 +71,7 @@ export class NewcoursesComponent implements OnInit {
     this.courseForm.controls['time'].setValue(moment(Date.now()).locale('fa').format('HH:mm:ss'))
     this.courseService.registerCourse(this.courseForm.value).subscribe((response) => {
       if (response['success'] === true) {
-        console.log(response['data']);
         this.messageService.add({severity: 'success', summary: 'ثبت با موفقیت انجام شد', detail: 'مشخصات دوره با موفقیت ثبت شد'});
-
       }
     });
 
@@ -83,6 +83,7 @@ export class NewcoursesComponent implements OnInit {
       formData.append('image', event.files[i], event.files[i]['name']);
     }
     this.courseService.uploadFile(formData).subscribe((response) => {
+      console.log(response)
       if (response['success'] === true) {
         this.courseForm.get('image').setValue(response['imagePath']);
       } else {
