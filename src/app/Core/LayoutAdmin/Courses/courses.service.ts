@@ -8,9 +8,9 @@ import {Courses} from './courses.model';
   providedIn: 'root'
 })
 export class CoursesService {
-  http: HttpClient;
-  constructor(http: HttpClient) {
-    this.http = http;
+
+  constructor(private http: HttpClient) {
+
   }
   uploadFile(image:any) {
     return this.http.post('http://localhost:3000/api/v1/admin/image', image);
@@ -21,4 +21,5 @@ export class CoursesService {
   getTeacher(){
     return this.http.get('http://localhost:3000/api/v1/teacher/index');
   }
+
 }
