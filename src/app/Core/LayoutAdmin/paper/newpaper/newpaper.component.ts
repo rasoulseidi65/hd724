@@ -28,9 +28,22 @@ export class NewpaperComponent implements OnInit {
       'time': new FormControl('', Validators.required)
     });
   }
+  onUpload(event) {
+    const formData = new FormData();
+    for (let i = 0; i < event.files.length; i++) {
+      formData.append('image', event.files[i], event.files[i]['name']);
+    }
+    this.paperService.uploadFile(formData).subscribe((response) => {
+      if (response['success'] === true) {
+        this.userform.get('image').setValue(response['imagePath']);
+      } else {
 
+      }
+    });
+  }
   onSubmit(value: string) {
     this.submitted = true;
+    console.log(this.userform.value)
     this.paperService.register(this.userform.value).subscribe((response) => {
       console.log(response);
       if (response['success'] === true) {

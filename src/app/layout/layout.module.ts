@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {LayoutRoutingModule} from './layout-routing.module';
 
-import {ArticleComponent} from '../article/article.component';
+
 
 import {CommentComponent} from './comment/comment.component';
 import {FilmComponent} from './film/film.component';
@@ -17,6 +17,7 @@ import {FooterComponent} from './footer/footer.component';
 import {GalleriaModule} from 'primeng/galleria';
 import {ButtonModule, SharedModule} from 'primeng/primeng';
 import {CarouselModule} from 'ngx-bootstrap/carousel';
+import {ArticleComponent} from './article/article.component';
 
 
 @NgModule({

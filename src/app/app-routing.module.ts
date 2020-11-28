@@ -38,10 +38,10 @@ const routes: Routes = [
   //   path: 'detail',
   //   loadChildren: () => import('./details/details.module').then(m => m.DetailsModule)
   // },
-  {
-    path: 'detailArticle',
-    loadChildren: () => import('./article/article.module').then(m => m.ArticleModule)
-  },
+  // {
+  //   path: 'detailArticle',
+  //   loadChildren: () => import('./article/article.module').then(m => m.ArticleModule)
+  // },
   {
     path: 'admin/panel',
     loadChildren: () => import('./Core/LayoutAdmin/layout-admin.module').then(m => m.LayoutAdminModule),
@@ -63,7 +63,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash:true, scrollPositionRestoration:'enabled'})],
+  imports: [RouterModule.forRoot(routes,{ scrollPositionRestoration:'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

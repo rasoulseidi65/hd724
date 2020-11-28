@@ -74,7 +74,13 @@
           تصویر <label style="color: red">*</label>:
         </div>
         <div class="ui-grid-col-8">
-          <p-fileUpload name="myfile[]" url="./upload.php" uploadLabel="آپلود" chooseLabel="انتخاب تصویر" cancelLabel="انصراف"></p-fileUpload>
+          <p-fileUpload name="myfile[]" customUpload="true"
+                        invalidFileSizeMessageDetail="حداکثر سایز عکس 2 مگابایت می باشد"
+                        invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
+                        multiple="multiple"
+                        accept="image/jpeg,image/png " maxFileSize="2000000"
+                        (uploadHandler)="onUpload($event)" uploadLabel="آپلود عکس" chooseLabel="انتخاب عکس"
+                        cancelLabel="انصراف"></p-fileUpload>
         </div>
         <div class="ui-grid-col-2">
         </div>

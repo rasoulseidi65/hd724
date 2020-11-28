@@ -69,7 +69,17 @@
           <p-message style="text-align: right" severity="error" text="خلاصه مقاله" *ngIf="!courseForm.controls['type'].valid&&courseForm.controls['type'].dirty"></p-message>
         </div>
       </div>
-
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+         زمان دوره:<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6" dir="ltr">
+          <input type="text" pInputText formControlName="timeCourse" >
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message style="text-align: right" severity="error" text="زمان دوره را وارد کنید" *ngIf="!courseForm.controls['timeCourse'].valid&&courseForm.controls['timeCourse'].dirty"></p-message>
+        </div>
+      </div>
       <div class="ui-grid-row">
         <div class="ui-grid-col-2">
           تعداد مشاهده <label style="color: red">*</label>:

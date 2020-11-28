@@ -13,7 +13,10 @@ const routes: Routes = [
   {
     path: 'detail/:id',
     loadChildren: () => import('./content/detail-film.module').then(m => m.DetailFilmModule)
-
+  },
+  {
+    path: 'detailArticle/:id',
+    loadChildren: () => import('./article/detailarticle/detailarticle.module').then(m => m.DetailarticleModule)
   }
 ];
 

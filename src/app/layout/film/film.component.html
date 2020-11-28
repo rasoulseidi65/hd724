@@ -7,10 +7,10 @@
     </div>
     <div class="nav-tabs">
       <ul class="nav nav-tabs nav-justified">
-        <li class="active"><a href="#tbl1" data-toggle="tab">همه مطالب</a></li>
-        <li><a href="#tbl2" data-toggle="tab">بیشترین دانلوده</a>ا</li>
+        <li class="active"><a href="#tbl1" data-toggle="tab" (click)="onChangeCourse(0)">همه مطالب</a></li>
+        <li><a href="#tbl2" data-toggle="tab" (click)="onChangeCourse(1)">بیشترین دانلوده</a>ا</li>
         <li><a href="#tbl3" data-toggle="tab">محبوب ترین مطالب</a></li>
-        <li><a href="#tbl4" data-toggle="tab">داغ ترین مطالب</a></li>
+        <li><a href="#tbl4" data-toggle="tab" (click)="onChangeCourse(3)">داغ ترین مطالب</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tbl1">
@@ -18,7 +18,7 @@
             <div class="thumbnail thumbnail-body-film">
               <a [routerLink]="['./detail',item._id]">
                 <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
+                  <img class="img-responsive" [src]="item.image" alt="">
                   <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
                   <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
                     <span><a>{{item.price}}</a>تومان</span>
@@ -38,167 +38,20 @@
 
         </div>
         <div class="tab-pane " id="tbl2">
-          <div class="col-sm-3">
+          <div class="col-sm-3" *ngFor="let item of listCourse">
             <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
+              <a [routerLink]="['./detail',item._id]">
                 <div class="panel-heading">
-                  <img class="img-responsive" src="../../../assets/bootstrap/img/media.jpg" alt="">
-                  <div class="hover-img"><img src="../../../assets/bootstrap/img/logo1.png" alt=""></div>
-                  <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>5600</a>تومان</span>
-                </div>
-                <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>برنامه نویسی و طراحی سایت پروژه محور</span></a>
-                </div>
-              </a>
-              <a routerLink="/detail">
-                <div class="panel-footer">
-                  <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
-                  <span class="pull-left">رسول صیدی پیری</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
-                <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
+                  <img class="img-responsive" [src]="item.image" alt="">
                   <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
                   <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>رایگان</a></span>
+                  <span><a>{{item.price}}</a>تومان</span>
                 </div>
                 <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>برنامه نویسی و طراحی سایت پروژه محور</span></a>
+                  <a href="#"><span><i class="fa fa-circle"></i>{{item.title}}</span></a>
                 </div>
               </a>
               <a routerLink="/detail">
-                <div class="panel-footer">
-                  <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
-                  <span class="pull-left">رسول صیدی پیری</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
-                <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
-                  <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
-                  <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>5600</a>تومان</span>
-                </div>
-                <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>برنامه نویسی و طراحی سایت پروژه محور</span></a>
-                </div>
-              </a>
-              <a href="#">
-                <div class="panel-footer">
-                  <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
-                  <span class="pull-left">رسول صیدی پیری</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
-                <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
-                  <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
-                  <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>رایگان</a></span>
-                </div>
-                <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>برنامه نویسی و طراحی سایت پروژه محور</span></a>
-                </div>
-              </a>
-              <a href="#">
-                <div class="panel-footer">
-                  <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
-                  <span class="pull-left">رسول صیدی پیری</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
-                <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
-                  <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
-                  <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>5600</a>تومان</span>
-                </div>
-                <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>برنامه نویسی و طراحی سایت پروژه محور</span></a>
-                </div>
-              </a>
-              <a href="#">
-                <div class="panel-footer">
-                  <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
-                  <span class="pull-left">رسول صیدی پیری</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
-                <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
-                  <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
-                  <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>رایگان</a></span>
-                </div>
-                <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>برنامه نویسی و طراحی سایت پروژه محور</span></a>
-                </div>
-              </a>
-              <a href="#">
-                <div class="panel-footer">
-                  <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
-                  <span class="pull-left">رسول صیدی پیری</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
-                <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
-                  <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
-                  <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>5600</a>تومان</span>
-                </div>
-                <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>برنامه نویسی و طراحی سایت پروژه محور</span></a>
-                </div>
-              </a>
-              <a href="#">
-                <div class="panel-footer">
-                  <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
-                  <span class="pull-left">رسول صیدی پیری</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
-                <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
-                  <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
-                  <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>5600</a>تومان</span>
-                </div>
-                <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>برنامه نویسی و طراحی سایت پروژه محور</span></a>
-                </div>
-              </a>
-              <a href="#">
                 <div class="panel-footer">
                   <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
                   <span class="pull-left">رسول صیدی پیری</span>
@@ -208,17 +61,17 @@
           </div>
         </div>
         <div class="tab-pane " id="tbl3">
-          <div class="col-sm-3">
+          <div class="col-sm-3" *ngFor="let item of listCourse">
             <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
+              <a [routerLink]="['./detail',item._id]">
                 <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
+                  <img class="img-responsive" [src]="item.image" alt="">
                   <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
                   <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>5600</a>تومان</span>
+                  <span><a>{{item.price}}</a>تومان</span>
                 </div>
                 <div class="panel-body">
-                  <a routerLink="/detail"><span><i class="fa fa-circle"></i>محبوب ترین دوره ها</span></a>
+                  <a href="#"><span><i class="fa fa-circle"></i>{{item.title}}</span></a>
                 </div>
               </a>
               <a routerLink="/detail">
@@ -231,17 +84,17 @@
           </div>
         </div>
         <div class="tab-pane " id="tbl4">
-          <div class="col-sm-3">
+          <div class="col-sm-3" *ngFor="let item of listCourse">
             <div class="thumbnail thumbnail-body-film">
-              <a routerLink="/detail">
+              <a [routerLink]="['./detail',item._id]">
                 <div class="panel-heading">
-                  <img class="img-responsive" src="/assets/bootstrap/img/media.jpg" alt="">
+                  <img class="img-responsive" [src]="item.image" alt="">
                   <div class="hover-img"><img src="/assets/bootstrap/img/logo1.png" alt=""></div>
                   <a><img src="/assets/bootstrap/img/thumnil.png" alt=""></a>
-                  <span><a>5600</a>تومان</span>
+                  <span><a>{{item.price}}</a>تومان</span>
                 </div>
                 <div class="panel-body">
-                  <a href="#"><span><i class="fa fa-circle"></i>بیشترین دانلود ها</span></a>
+                  <a href="#"><span><i class="fa fa-circle"></i>{{item.title}}</span></a>
                 </div>
               </a>
               <a routerLink="/detail">

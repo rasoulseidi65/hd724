@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MessageService, SelectItem, TreeNode} from 'primeng/api';
 import {CoursesService} from '../courses.service';
 import {TeacherService} from '../../teacher/teacher.service';
-
+import * as moment from 'jalali-moment';
 @Component({
   selector: 'app-newcourses',
   templateUrl: './newcourses.component.html',
@@ -46,6 +46,7 @@ export class NewcoursesComponent implements OnInit {
       commentCount: new FormControl(''),
       type: new FormControl(''),
       image: new FormControl(''),
+      timeCourse: new FormControl('',),
       date: new FormControl('',),
       time: new FormControl('',)
     });
@@ -59,11 +60,13 @@ export class NewcoursesComponent implements OnInit {
   }
 
   convertPrice(event: any) {
-    console.log(event);
+
   }
 
   onSubmit(value: string) {
     this.submitted = true;
+    this.courseForm.controls['date'].setValue(moment(Date.now()).locale('fa').format('YYYY/M/D'))
+    this.courseForm.controls['time'].setValue(moment(Date.now()).locale('fa').format('HH:mm:ss'))
     this.courseService.registerCourse(this.courseForm.value).subscribe((response) => {
       if (response['success'] === true) {
         console.log(response['data']);
@@ -83,7 +86,7 @@ export class NewcoursesComponent implements OnInit {
       if (response['success'] === true) {
         this.courseForm.get('image').setValue(response['imagePath']);
       } else {
-        console.log(response);
+
       }
     });
   }
