@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MessageService} from 'primeng/api';
 import {UsersService} from '../Users.service';
 import {Router} from '@angular/router';
+import {LocalStorageService} from '../localStorageLogin/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -16,23 +17,26 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private messageService: MessageService,
               private UserService: UsersService,
-              private router: Router) {
+              private router: Router,
+              private localstorage:LocalStorageService) {
   }
 
   ngOnInit(): void {
+    // this.localstorage.getCurrentUser();
+    // console.log(this.localstorage.userData)
     this.userform = this.fb.group({
-      'mobile': new FormControl('', Validators.required),
-      'password': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1)])),
+      mobile: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.compose([Validators.required, Validators.minLength(1)])),
     });
   }
 
   onSubmit(value: string) {
     this.UserService.login(this.userform.value).subscribe((response) => {
+      console.log(response)
       if (response['success'] === true) {
-        let data = response['data'];
-        // this.UserService.token = data['token'];
-        localStorage.setItem(this.UserService.token,data['token'])
-        this.router.navigate(['/admin/panel']);
+       let data=response['data']
+       this.localstorage.saveCurrentUser(JSON.stringify(data));
+        this.router.navigate(['/']);
       }
     });
   }

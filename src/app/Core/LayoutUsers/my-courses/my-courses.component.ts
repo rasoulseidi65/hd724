@@ -19,8 +19,8 @@ export class MyCoursesComponent implements OnInit {
 
   getcours() {
     this.Service.listCourse().subscribe((response) => {
-      if (response.success===true) {
-        this.listCourse=response.data;
+      if (response['success']===true) {
+        this.listCourse=response['data'];
       }
 
     });

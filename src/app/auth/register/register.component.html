@@ -11,23 +11,23 @@
           </div>
           <div class="panel-body">
             <form  class="form-horizontal" [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
-              <div class="ui-g">
-                <div class="ui-g-6">
-                  <p-radioButton name="groupname" value="teacher" label="مدرس"  formControlName="type" [(ngModel)]="selectUser"></p-radioButton>
-                </div>
-                <div class="ui-g-6">
-                  <p-radioButton name="groupname" value="user"  label="کاربر"  formControlName="type" [(ngModel)]="selectUser"></p-radioButton>
-                </div>
-              </div>
+
               <div class="col-md-10 col-md-offset-1" style="text-align: right">
-                <label>نام و نام خانوادگی</label>
+                <label>نام </label>
                 <div class="input-group form-group">
                   <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                  <input class="form-control" type="text" formControlName="firstname" placeholder="نام و نام خانوادگی">
+                  <input class="form-control" type="text" formControlName="firstName" placeholder="نام ">
                 </div>
 
               </div>
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+                <label>نام خانوادگی: </label>
+                <div class="input-group form-group">
+                  <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                  <input class="form-control" type="text" formControlName="lastName" placeholder=" نام خانوادگی">
+                </div>
 
+              </div>
               <div class="col-md-10 col-md-offset-1" style="text-align: right">
                 <label>ایمیل</label>
                 <div class="input-group form-group">

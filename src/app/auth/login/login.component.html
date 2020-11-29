@@ -12,17 +12,7 @@
           <div class="panel-body">
             <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
 
-              <div class="ui-g">
-                <div class="ui-g-4">
-                  <p-radioButton name="groupname" value="admin"  label="مدیر"></p-radioButton>
-                </div>
-                <div class="ui-g-4">
-                <p-radioButton name="groupname" value="teacher" label="مدرس" ></p-radioButton>
-                </div>
-                <div class="ui-g-4">
-                  <p-radioButton name="groupname" value="user"  label="کاربر"></p-radioButton>
-                </div>
-                </div>
+
               <div class="col-md-10 col-md-offset-1" style="text-align: right">
 <!--                <label>شماره همراه:</label>-->
                 <div class="input-group form-group">

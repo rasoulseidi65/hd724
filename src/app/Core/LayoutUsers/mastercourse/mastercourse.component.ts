@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {LayoutuserService} from '../layoutuser.service';
 import {SelectItem} from 'primeng/api';
+import {LocalStorageService} from '../../../auth/localStorageLogin/local-storage.service';
 
 interface Country {
   name: string;
@@ -19,7 +20,9 @@ export class MastercourseComponent implements OnInit {
   lisEpisode:any[]=[];
   listEpisodeFlag:boolean;
 
-  constructor(private TF: FormBuilder, private service: LayoutuserService) {
+  constructor(private TF: FormBuilder,
+              private service: LayoutuserService,
+              private localstorage:LocalStorageService) {
     this.categories = [
       {label: 'برنامه نویسی', value: 'برنامه نویسی'},
       {label: 'شبکه های کامپیوتری', value: 'شبکه های کامپیوتری'},
@@ -36,10 +39,7 @@ export class MastercourseComponent implements OnInit {
   }
 
   onSubmit(data: any) {
-    this.episodeForm.controls.videoUrl.setValue('hhh');
-    this.courseForm.controls.userID.setValue('5f89ed600ba7f50ba8f0007a');
-    console.log(this.courseForm.value);
-    console.log(this.episodeForm.value);
+    this.courseForm.controls.userID.setValue(this.localstorage.userJson['_id']);
     let data1= {
       course: this.courseForm.value,
       episode: this.lisEpisode
@@ -104,7 +104,6 @@ export class MastercourseComponent implements OnInit {
       if (response['success'] === true) {
         this.episodeForm.get('videoUrl').setValue(response['videoPath']);
 
-        console.log(response['videoPath'])
       } else {
       }
     });
