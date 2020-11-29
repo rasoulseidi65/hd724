@@ -11,11 +11,11 @@
              <img class="img-responsive" [src]="item.image" alt="">
            </div>
            <div class="panel-body">
-             <a [routerLink]="['home/detailArticle',item._id]"><span><i class="fa fa-circle"></i>{{item.title}}</span></a>
+             <a [routerLink]="['./detailArticle',item._id]"><span><i class="fa fa-circle"></i>{{item.title}}</span></a>
            </div>
         <div class="panel-footer">
           <i class="fas fa-thumbs-up pull-right"><span style="font-family:IRANSans_Light;margin-left: 5px;">12</span></i>
-          <a routerLink="/detailArticle"><span class="pull-left">ادامه مطالب</span></a>
+          <a  [routerLink]="['./detailArticle',item._id]"><span class="pull-left">ادامه مطالب</span></a>
         </div>
       </div>
     </div>

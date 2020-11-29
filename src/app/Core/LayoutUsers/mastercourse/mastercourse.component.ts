@@ -87,7 +87,7 @@ export class MastercourseComponent implements OnInit {
       formData.append('image', event.files[i], event.files[i]['name']);
     }
     this.service.uploadFile(formData).subscribe((response) => {
-
+      console.log(response);
       if (response['success'] === true) {
         this.courseForm.get('image').setValue(response['imagePath']);
       } else {
