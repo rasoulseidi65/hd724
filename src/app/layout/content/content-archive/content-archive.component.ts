@@ -11,9 +11,9 @@ export class ContentArchiveComponent implements OnInit {
   constructor(private serviceCart:CartService) { }
 
   ngOnInit(): void {
-    setTimeout(()=>{
-      console.log(this.data)
-    },3000)
+    // setTimeout(()=>{
+    //   console.log(this.data)
+    // },3000)
   }
   addCart(product: any): void {
       const list = {

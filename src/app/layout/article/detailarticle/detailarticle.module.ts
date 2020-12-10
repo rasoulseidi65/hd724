@@ -7,6 +7,7 @@ import {LayoutModule} from '../../layout.module';
 import {ContentBodyComponent} from './content-body/content-body.component';
 import {ContentArchiveComponent} from './content-archive/content-archive.component';
 import {ContentCommentsComponent} from './content-comments/content-comments.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {ContentCommentsComponent} from './content-comments/content-comments.comp
   imports: [
     CommonModule,
     DetailarticleRoutingModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule
   ]
 })
 export class DetailarticleModule { }

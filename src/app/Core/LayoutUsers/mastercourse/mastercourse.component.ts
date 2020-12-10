@@ -114,7 +114,7 @@ export class MastercourseComponent implements OnInit {
     });
  this.listEpisodeFlag=true;
 }
-xx(i:any) {
+  postEpisod(i:any) {
   this.lisEpisode.splice(i, 1);
 
 }

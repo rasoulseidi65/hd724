@@ -1,13 +1,13 @@
 
-            <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
               <p-panel header=" لطفا اطلاعات خود را وارد کنید با شکر">
-                <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+                <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px" >
                   <div class="ui-grid-row">
                     <div class="ui-grid-col-2">
                       نام  <label style="color: red">*</label>:
                     </div>
                     <div class="ui-grid-col-6">
-                      <input pInputText type="text" formControlName="firstName" placeholder=""/>
+                      <input pInputText type="text" [(ngModel)]="userInfo.firstName" formControlName="firstName" placeholder=""/>
                     </div>
                     <div class="ui-grid-col-4">
                       <p-message severity="error" text="نام خود را وارد کنید"
@@ -19,7 +19,7 @@
                       نام خانوادگی  <label style="color: red">*</label>:
                     </div>
                     <div class="ui-grid-col-6">
-                      <input pInputText type="text" formControlName="lastName" placeholder=""/>
+                      <input pInputText type="text" [(ngModel)]="userInfo.lastName" formControlName="lastName" placeholder=""/>
                     </div>
                     <div class="ui-grid-col-4">
                       <p-message severity="error" text="نام خانوادگی  را وارد نمائید "
@@ -32,7 +32,7 @@
                     </div>
                     <div class="ui-grid-col-6">
                       <!--          <p-inputMask  mask="(0999) 999-9999" formControlName="mobile" placeholder="(0912) 345-6789"></p-inputMask>-->
-                      <input pInputText type="text" pKeyFilter="num" formControlName="mobile" placeholder=""
+                      <input pInputText type="text" pKeyFilter="num" [(ngModel)]="userInfo.mobile" formControlName="mobile" placeholder=""
                              maxlength="11"/>
                     </div>
                     <div class="ui-grid-col-4">
@@ -45,7 +45,7 @@
                       ایمیل <label style="color: red">*</label>:
                     </div>
                     <div class="ui-grid-col-6">
-                      <input type="text" pInputText pKeyFilter="email" formControlName="email">
+                      <input type="text" pInputText pKeyFilter="email" [(ngModel)]="userInfo.email" formControlName="email">
 
                     </div>
                     <div class="ui-grid-col-4">
@@ -58,11 +58,11 @@
                       استان  <label style="color: red">*</label>:
                     </div>
                     <div class="ui-grid-col-6">
-                      <input pInputText type="text" formControlName="State" placeholder=""/>
+                      <input pInputText type="text" [(ngModel)]="userInfo.state" formControlName="state" placeholder=""/>
                     </div>
                     <div class="ui-grid-col-4">
                       <p-message severity="error" text=" استان خود را وارد کنید"
-                                 *ngIf="!userForm.controls['State'].valid&&userForm.controls['State'].dirty"></p-message>
+                                 *ngIf="!userForm.controls['state'].valid&&userForm.controls['state'].dirty"></p-message>
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -70,7 +70,7 @@
                       شهر  <label style="color: red">*</label>:
                     </div>
                     <div class="ui-grid-col-6">
-                      <input pInputText type="text" formControlName="city" placeholder=""/>
+                      <input pInputText type="text" [(ngModel)]="userInfo.city" formControlName="city" placeholder=""/>
                     </div>
                     <div class="ui-grid-col-4">
                       <p-message severity="error" text=" شهر خود را وارد کنید"
@@ -82,7 +82,7 @@
                       آدرس  <label style="color: red">*</label>:
                     </div>
                     <div class="ui-grid-col-6">
-                      <input pInputText type="text" formControlName="address" placeholder=""/>
+                      <input pInputText type="text" [(ngModel)]="userInfo.address" formControlName="address" placeholder=""/>
                     </div>
                     <div class="ui-grid-col-4">
                       <p-message severity="error" text="آدرس خود را وارد کنید"
@@ -94,7 +94,7 @@
                       تصویر پروفایل :
                     </div>
                     <div class="ui-grid-col-8">
-                      <p-fileUpload name="myfile[]" customUpload="true"
+                      <p-fileUpload name="myfile[]"  customUpload="true"
                                     invalidFileSizeMessageDetail="حداکثر سایز عکس 2 مگابایت می باشد"
                                     invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
                                     multiple="multiple"
@@ -108,7 +108,7 @@
                   <div class="ui-grid-row">
                     <div class="ui-grid-col-2"></div>
                     <div class="ui-grid-col-6">
-                      <button pButton type="submit" label="ثبت اطلاعات" [disabled]="!userForm.valid"></button>
+                      <button pButton type="submit" label="ثبت اطلاعات" ></button>
                     </div>
                     <div class="ui-grid-col-4"></div>
                   </div>
@@ -116,3 +116,4 @@
                 </div>
               </p-panel>
             </form>
+

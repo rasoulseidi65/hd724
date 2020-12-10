@@ -12,7 +12,9 @@ export class BankAccountComponent implements OnInit {
 
   ngOnInit() {
     this.userAcuunt = this.fb.group({
-      BankAccount: new FormControl('', Validators.required)
+      cardNumber: new FormControl('', Validators.required),
+      accountNumber: new FormControl('', Validators.required),
+      shabaNumber: new FormControl('', Validators.required)
     });
   }
 

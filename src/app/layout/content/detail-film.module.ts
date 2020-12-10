@@ -7,6 +7,10 @@ import {ContentBodyComponent} from './content-body/content-body.component';
 import {ContentCommentsComponent} from './content-comments/content-comments.component';
 import {ContentComponent} from './content.component';
 import {LayoutModule} from '../layout.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ButtonModule} from 'primeng/button';
+import {MessageModule} from 'primeng/message';
+import {PanelModule} from 'primeng/panel';
 
 
 @NgModule({
@@ -14,7 +18,12 @@ import {LayoutModule} from '../layout.module';
   imports: [
     CommonModule,
     DetailFilmRoutingModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    FormsModule,
+    MessageModule,
+    PanelModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

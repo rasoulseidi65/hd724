@@ -19,13 +19,13 @@ export class NewpaperComponent implements OnInit {
 
   ngOnInit() {
     this.userform = this.fb.group({
-      'title': new FormControl('', Validators.required),
-      'abstract': new FormControl('', Validators.required),
-      'detail': new FormControl('', Validators.required),
-      'author': new FormControl('', Validators.required),
-      'image': new FormControl(''),
-      'date': new FormControl('', Validators.required),
-      'time': new FormControl('', Validators.required)
+      title: new FormControl('', Validators.required),
+      abstract: new FormControl('', Validators.required),
+      detail: new FormControl('', Validators.required),
+      author: new FormControl('', Validators.required),
+      image: new FormControl(''),
+      date: new FormControl('', Validators.required),
+      time: new FormControl('', Validators.required)
     });
   }
   onUpload(event) {
@@ -35,6 +35,8 @@ export class NewpaperComponent implements OnInit {
     }
     this.paperService.uploadFile(formData).subscribe((response) => {
       if (response['success'] === true) {
+        this.messageService.add({severity: 'success', summary: 'آپلود تصویر', detail: 'تصویر مقاله با موفقیت ثبت شد'});
+
         this.userform.get('image').setValue(response['imagePath']);
       } else {
 

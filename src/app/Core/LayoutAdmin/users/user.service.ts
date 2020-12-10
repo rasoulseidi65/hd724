@@ -14,6 +14,6 @@ export class UserService {
   }
 
   index(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:3000/api/v1/users/index');
+    return this.http.get<User[]>('http://api.hd724.com/api/v1/users/index');
   }
 }

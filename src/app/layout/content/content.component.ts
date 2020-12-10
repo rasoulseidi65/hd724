@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {LayoutService} from '../layout.service';
 import {ActivatedRoute} from '@angular/router';
-import {response} from 'express';
+
+
 
 @Component({
   selector: 'app-content',
@@ -13,8 +14,7 @@ export class ContentComponent implements OnInit {
   course: any;
 
   constructor(private service: LayoutService,
-              private route: ActivatedRoute) {
-  }
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params =>
@@ -23,11 +23,12 @@ export class ContentComponent implements OnInit {
       _id: this.courseID
     };
     this.service.findCourse(data).subscribe((response) => {
+      console.log(response)
       if (response['success'] === true) {
         this.course = response['data'][0];
         console.log(this.course)
       }
     });
-  }
 
+  }
 }

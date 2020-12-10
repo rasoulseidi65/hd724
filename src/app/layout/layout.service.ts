@@ -28,4 +28,7 @@ export class LayoutService {
   newestArticle(){
     return this.http.get('http://api.hd724.com/api/v1/users/newest');
   }
+  newComment(data: any) {
+    return this.http.post('http://api.hd724.com/api/v1/users/comment',data);
+  }
 }
