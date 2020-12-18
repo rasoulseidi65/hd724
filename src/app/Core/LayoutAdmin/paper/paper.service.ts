@@ -13,22 +13,22 @@ export class PaperService {
     this.http = http;
   }
   uploadFile(image:any) {
-    return this.http.post('http://api.hd724.com/api/v1/admin/image', image);
+    return this.http.post('http://localhost:1025/api/v1/admin/image', image);
   }
   register(data: any): Observable<paper[]> {
 
-    return this.http.post<paper[]>('http://api.hd724.com/api/v1/admin/article', data);
+    return this.http.post<paper[]>('http://localhost:1025/api/v1/admin/article', data);
   }
 
   index(): Observable<paper[]> {
-    return this.http.get<paper[]>('http://api.hd724.com/api/v1/admin/article', {observe: 'body'});
+    return this.http.get<paper[]>('http://localhost:1025/api/v1/admin/article', {observe: 'body'});
   }
 
   update(data: any): Observable<paper[]> {
-    return this.http.put<paper[]>('http://api.hd724.com/api/v1/admin/article', data);
+    return this.http.put<paper[]>('http://localhost:1025/api/v1/admin/article', data);
   }
 
   destory(paperID: any): Observable<paper[]> {
-    return this.http.delete<paper[]>('http://api.hd724.com/api/v1/admin/article' + paperID);
+    return this.http.delete<paper[]>('http://localhost:1025/api/v1/admin/article' + paperID);
   }
 }

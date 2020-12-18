@@ -13,13 +13,13 @@ export class CoursesService {
 
   }
   uploadFile(image:any) {
-    return this.http.post('http://localhost:3000/api/v1/admin/image', image);
+    return this.http.post('http://localhost:1025/api/v1/admin/image', image);
   }
   registerCourse(data:any){
-    return this.http.post('http://localhost:3000/api/v1/admin/course',data);
+    return this.http.post('http://localhost:1025/api/v1/admin/course',data);
   }
   getTeacher(){
-    return this.http.get('http://localhost:3000/api/v1/teacher/index');
+    return this.http.get('http://localhost:1025/api/v1/teacher/index');
   }
 
 }

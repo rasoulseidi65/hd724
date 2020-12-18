@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {IndexComponent} from './index/index.component';
 import {DetailsComponent} from '../details/details.component';
+import {CartComponent} from './cart/cart.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'detailArticle/:id',
     loadChildren: () => import('./article/detailarticle/detailarticle.module').then(m => m.DetailarticleModule)
+  },
+  {
+    path: 'cart',
+    component:CartComponent
   }
 ];
 

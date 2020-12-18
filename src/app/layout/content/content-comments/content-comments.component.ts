@@ -12,12 +12,17 @@ import {response} from 'express';
 export class ContentCommentsComponent implements OnInit {
 @Input() data: any;
   commentForm: FormGroup;
-
+  listComment:any[];
   constructor(private route: ActivatedRoute,
                private service: LayoutService,
                private tf: FormBuilder) { }
 id: any;
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.listComment=this.data['Comment'];
+      console.log(this.listComment)
+    },3000)
+   // console.log(this.data)
     this.route.paramMap.subscribe(params => this.id = params.get('id'));
     this.listCommentForm();
   }
@@ -27,6 +32,7 @@ id: any;
     email: new FormControl('', Validators.required),
     text: new FormControl('', Validators.required),
     date: new FormControl(''),
+    id: new FormControl('')
 
   });
   }

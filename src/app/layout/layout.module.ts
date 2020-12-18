@@ -15,21 +15,35 @@ import {CenterMenuComponent} from './center-menu/center-menu.component';
 import {MenuComponent} from './menu/menu.component';
 import {FooterComponent} from './footer/footer.component';
 import {GalleriaModule} from 'primeng/galleria';
-import {ButtonModule, SharedModule} from 'primeng/primeng';
+import {AccordionModule, ButtonModule, CardModule, InputTextareaModule, OrderListModule, PanelModule, SharedModule} from 'primeng/primeng';
 import {CarouselModule} from 'ngx-bootstrap/carousel';
 import {ArticleComponent} from './article/article.component';
+import { CartComponent } from './cart/cart.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {ReactiveFormsModule} from '@angular/forms';
+import {TableModule} from 'primeng/table';
+import {ToastModule} from 'primeng/toast';
 
 
 @NgModule({
   declarations: [IndexComponent, HeaderComponent, CommentComponent
-    , FilmComponent, ArticleComponent, TopMenuComponent, CenterMenuComponent,MenuComponent,FooterComponent],
+    , FilmComponent, ArticleComponent, TopMenuComponent, CenterMenuComponent,MenuComponent,FooterComponent, CartComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,
     GalleriaModule,
     SharedModule,
     ButtonModule,
-    CarouselModule
+    CarouselModule,
+    CardModule,
+    MatStepperModule,
+    InputTextareaModule,
+    OrderListModule,
+    PanelModule,
+    ReactiveFormsModule,
+    TableModule,
+    AccordionModule,
+    ToastModule
   ],
   exports: [IndexComponent,
     HeaderComponent,

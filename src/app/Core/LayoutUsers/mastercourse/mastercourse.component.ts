@@ -44,6 +44,7 @@ export class MastercourseComponent implements OnInit {
       course: this.courseForm.value,
       episode: this.lisEpisode
     }
+    console.log(this.lisEpisode)
    this.service.registerCourse(data1).subscribe((response)=>{
      console.log(response)
    })
@@ -101,6 +102,7 @@ export class MastercourseComponent implements OnInit {
       formData.append('video', event.files[i], event.files[i]['name']);
     }
     this.service.uploadVideo(formData).subscribe((response) => {
+      console.log(response)
       if (response['success'] === true) {
         this.episodeForm.get('videoUrl').setValue(response['videoPath']);
 

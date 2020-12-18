@@ -16,12 +16,12 @@ export class TeacherService {
   }
 
   index(): Observable<Teacher[]> {
-    return this.http.get<Teacher[]>('http://api.hd724.com/api/v1/teacher/index');
+    return this.http.get<Teacher[]>('http://localhost:1025/api/v1/teacher/index');
   }
   uploadFile(image:any) {
-    return this.http.post('http://api.hd724.com/api/api/v1/admin/image', image);
+    return this.http.post('http://localhost:1025/api/api/v1/admin/image', image);
   }
   register(data: any): Observable<Teacher[]> {
-    return this.http.post<Teacher[]>('http://api.hd724.com/api/api/v1/teacher/register', data);
+    return this.http.post<Teacher[]>('http://localhost:1025/api/api/v1/teacher/register', data);
   }
 }
