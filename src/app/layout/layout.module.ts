@@ -14,36 +14,32 @@ import {TopMenuComponent} from './top-menu/top-menu.component';
 import {CenterMenuComponent} from './center-menu/center-menu.component';
 import {MenuComponent} from './menu/menu.component';
 import {FooterComponent} from './footer/footer.component';
-import {GalleriaModule} from 'primeng/galleria';
-import {AccordionModule, ButtonModule, CardModule, InputTextareaModule, OrderListModule, PanelModule, SharedModule} from 'primeng/primeng';
-import {CarouselModule} from 'ngx-bootstrap/carousel';
 import {ArticleComponent} from './article/article.component';
 import { CartComponent } from './cart/cart.component';
 import {MatStepperModule} from '@angular/material/stepper';
-import {ReactiveFormsModule} from '@angular/forms';
-import {TableModule} from 'primeng/table';
-import {ToastModule} from 'primeng/toast';
+import {ReactiveFormsModule} from '@angular/forms';;
+import { CooperationComponent } from './cooperation/cooperation.component';
+import {CarouselModule} from 'ngx-owl-carousel-o';
+import { AllCantentComponent } from './film/all-cantent/all-cantent.component';
+import { MostDownloadsComponent } from './film/most-downloads/most-downloads.component';
+import { MostPopularContentComponent } from './film/most-popular-content/most-popular-content.component';
+import { HottestContentComponent } from './film/hottest-content/hottest-content.component';
+
+
+
 
 
 @NgModule({
   declarations: [IndexComponent, HeaderComponent, CommentComponent
-    , FilmComponent, ArticleComponent, TopMenuComponent, CenterMenuComponent,MenuComponent,FooterComponent, CartComponent],
+    , FilmComponent, ArticleComponent, TopMenuComponent, CenterMenuComponent,MenuComponent,FooterComponent, CartComponent, CooperationComponent, AllCantentComponent, MostDownloadsComponent, MostPopularContentComponent, HottestContentComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    GalleriaModule,
-    SharedModule,
-    ButtonModule,
-    CarouselModule,
-    CardModule,
     MatStepperModule,
-    InputTextareaModule,
-    OrderListModule,
-    PanelModule,
     ReactiveFormsModule,
-    TableModule,
-    AccordionModule,
-    ToastModule
+    CarouselModule,
+
+
   ],
   exports: [IndexComponent,
     HeaderComponent,

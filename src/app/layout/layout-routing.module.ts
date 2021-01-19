@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {IndexComponent} from './index/index.component';
-import {DetailsComponent} from '../details/details.component';
 import {CartComponent} from './cart/cart.component';
 
 

@@ -2,13 +2,13 @@
   "data":[
     {
       "previewImageSrc": "/assets/bootstrap/img/galleria1.jpg",
-      "thumbnailImageSrc": "/assets/bootstrap/img/galleria1.jpg",
+
       "alt": "ظطزظط",
       "title": "ظطزظطزط"
     },
     {
       "previewImageSrc": "./assets/bootstrap/img/galleria10.jpg",
-      "thumbnailImageSrc": "./assets/bootstrap/img/galleria10.jpg",
+
       "alt": "Description for Image 2",
       "title": "ظطزظطزط"
     }

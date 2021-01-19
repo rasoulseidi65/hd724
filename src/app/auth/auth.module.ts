@@ -5,14 +5,10 @@ import { AuthRoutingModule } from './auth-routing.module';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {LayoutModule} from '../layout/layout.module';
-import {PasswordModule} from 'primeng/password';
-import {ButtonModule} from 'primeng/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ToastModule} from 'primeng/toast';
-import {KeyFilterModule} from 'primeng/keyfilter';
-import {MessageModule} from 'primeng/message';
-import {CaptchaModule, RadioButtonModule} from 'primeng/primeng';
 import {MatRadioModule} from '@angular/material';
+import {SharedModule} from '../SharedModule/shared.module';
+import {CaptchaModule} from 'primeng/captcha';
 
 
 
@@ -23,15 +19,10 @@ import {MatRadioModule} from '@angular/material';
     CommonModule,
     AuthRoutingModule,
     LayoutModule,
-    PasswordModule,
-    ButtonModule,
     ReactiveFormsModule,
-    ToastModule,
-    KeyFilterModule,
-    MessageModule,
-    RadioButtonModule,
     MatRadioModule,
     FormsModule,
+    SharedModule,
     CaptchaModule
   ],
 

@@ -5,16 +5,7 @@ import { LayoutUsersRoutingModule } from './layoutusers-routing.module';
 import {DashboardComponent} from './dashboardUser/dashboard.component';
 import {MatButtonModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import {AccordionModule} from 'primeng/accordion';
-import {
-  ButtonModule,
-  CardModule, CheckboxModule,
-  DropdownModule, EditorModule,
-  FileUploadModule, InputMaskModule, InputTextareaModule, InputTextModule, KeyFilterModule,
-  MenubarModule,
-  MessageModule, MultiSelectModule, OrderListModule, PaginatorModule,
-  PanelModule, RadioButtonModule,
-  ToolbarModule
-} from 'primeng/primeng';
+
 
 import { CounteruserComponent } from './counteruser/counteruser.component';
 import { MyProductsComponent } from './my-products/my-products.component';
@@ -35,6 +26,7 @@ import { CourseComponent } from './course/course.component';
 import {TableModule} from 'primeng/table';
 import { BankAccountComponent } from './Account-Settings/bank-account/bank-account.component';
 import { MastercourseComponent } from './mastercourse/mastercourse.component';
+import {SharedModule} from '../../SharedModule/shared.module';
 
 
 
@@ -65,30 +57,14 @@ import { MastercourseComponent } from './mastercourse/mastercourse.component';
     MatSidenavModule,
     MatListModule,
     AccordionModule,
-    ToolbarModule,
-    MatButtonModule,
-    MenubarModule,
-    ButtonModule,
-    CardModule,
-    PanelModule,
-    ToastModule,
-    MessageModule,
-    DropdownModule,
-    FileUploadModule,
-    QuillModule,
-    InputTextModule,
-    ReactiveFormsModule,
+        MatButtonModule,
+        ToastModule,
+       QuillModule,
+        ReactiveFormsModule,
     LayoutModule,
     TableModule,
-    PaginatorModule,
-    InputMaskModule,
-    KeyFilterModule,
-    MultiSelectModule,
-    CheckboxModule,
-    EditorModule,
-    RadioButtonModule,
-    InputTextareaModule,
-    OrderListModule,
+    SharedModule
+
 
   ]
 })
